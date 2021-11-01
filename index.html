@@ -6,13 +6,14 @@
 <body>
 
 <p>Score: <span id="score">0</span></p>
-<img scr="primogem.jpg" height="600" width="600px" onclick=addToScore(1)">
+<img scr="primogem.jpg" height="600" width="600px" onclick="addToScore(clickingPower)">
 
 <buttin onclick="buyCursor () ">Cursor{ [<span id="cursorcost">15</span>] -- <span id="cursosr">0</span><button>
 <buttin onclick="buyGrandma () ">Grandma [<span id="grandmacost">100</span>] -- <span id="grandmas">0</span></button>
 
   <script>
     var score = 0;
+    var clickingPower = 1
 
     var cursorcost = 15;
     var cursors = 0;
