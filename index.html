@@ -1,0 +1,57 @@
+<HTML>
+<head>
+<title>Clicker game</title>
+</head>
+
+<body>
+<p>Score: <span id="score">0</span></p>
+<img scr="primogem.jpg" height+"256px" width="256px" onclick=addToScore(1)">
+
+<buttin onclick="buyCursor () ">Cursor{ [<span id="cursorcost">15</span>] -- <span id="cursosr">0</span><button>
+<buttin onclick="buyGrandma () ">Grandma [<span id="grandmacost">100</span>] -- <span id="grandmas">0</span></button>
+
+  <script>
+    var score = 0;
+
+    var cursorcost = 15;
+    var cursors = 0;
+    var grandmacost = 100;
+    var grandmas = 0;
+
+    function buyCursor() {
+      if (score >= cursorcost) {
+        score = score - cursorcost;
+        cursors = cursors + 1;
+        cursorcost = Math.round(cursorcost * 1,15) ;
+
+        document.getElementById("score").innerHTML = score;
+        document.getElementById("cursorcost").innerHTML = cursorcost;
+        document.getElementById("cursors")innerHTML = cusrsors;
+      }
+    }
+
+    function buyGrandma() {
+      if (score >= Grandmacost) {
+        score = score - Grandmacost;
+        cursors = Grandmas + 1;
+        cursorcost = Math.round(Grandmacost * 1,15) ;
+
+        document.getElementById("score").innerHTML = score;
+        document.getElementById("Grandmacost").innerHTML = cursorcost;
+        document.getElementById("Grandmas")innerHTML = cusrsors;
+      }
+    }
+
+    function addToScore(amount) {
+      score = score + amount;
+      document.getElementById("score").innerHTML = score;
+    }
+
+setinterval (function() {
+  score = score + cursors;
+  score = score + grandmas * 5;
+  document.getElementById("score").innerHTML = score;
+}, 1000) ; //1000ms = 1 second
+</script>
+</body>
+</HTML>
