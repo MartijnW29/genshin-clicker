@@ -9,6 +9,8 @@
   var Cursors = 0;
   var Grandmacost = 100;
   var Grandmas = 0;
+  var Kaeyacost = 250;
+  var Kaeyas = 0;
 
   function buyCursor() {
     if (score >= Cursorcost) {
@@ -33,6 +35,17 @@
       document.getElementById("Grandmas").innerHTML = Grandmas;
     }
   }
+  function buyKaeya() {
+    if (score >= Kaeyacost) {
+      score = score - Kaeyacost;
+      Kaeyas = Kaeyas + 1;
+      Kaeyacost = Math.round(Kaeyacost * 1.15) ;
+
+      document.getElementById("score").innerHTML = score;
+      document.getElementById("Kaeyacost").innerHTML = Kaeyacost;
+      document.getElementById("Kaeyas").innerHTML = Kaeyas;
+    }
+  }
 
   function addToScore(amount) {
     score = score + amount;
@@ -41,6 +54,7 @@
   setInterval (function() {
     score = score + Cursors;
     score = score + (Grandmas * 5);
+    score = score + (Kaeyas * 10);
     document.getElementById("score").innerHTML = score;
   }, 1000) ; //1000ms = 1 second
 </script>
@@ -53,6 +67,7 @@
 
 <button onclick="buyCursor () ">Cursor [<span id="Cursorcost">15</span>] -- <span id="Cursors">0</span></button>
 <button onclick="buyGrandma () ">Grandma [<span id="Grandmacost">100</span>] -- <span id="Grandmas">0</span></button>
+<button onclick="buyKaeya () ">Kaeya [<span id="Kaeyacost">250</span>] -- <span id="Kaeyas">0</span></button>
 
 
 </body>
