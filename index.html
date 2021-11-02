@@ -2,101 +2,10 @@
 <head>
 <title>Genshin clicker</title>
 
-<style>
-.sectionleft {
-  float: left;
-  width: 80%;
-}
-.sectionright {
-  float: right;
-  width: 20%;
-}
-.scorecontainer {
-background-color: rgb(238, 238, 238, 0.6);
-width: 50%;
-padding: 10px;
-border-radius: 10px;
-forn-size: 24px;
-font-weight: bold;
-}
+<link rel="stylesheet" href="stijl.css">
 
-.clickercontainer img {
-  position: relative;
-}
+<script src="script.js"></script>
 
-.clickercontainer img:hover { transform: scale(1.10); }
-.clickercontainer img:active { transform: scale(0.99); }
-
-</style>
-
-<script>
-  var score = 0;
-  var clickingPower = 1
-
-  var Cursorcost = 15;
-  var Cursors = 0;
-  var Grandmacost = 100;
-  var Grandmas = 0;
-  var Kaeyacost = 250;
-  var Kaeyas = 0;
-
-  function updatescorepersecond(Cursors, Grandmas, Kaeyas) {
-    scorepersecond = Cursors + (Grandmas * 5) + (Kaeyas * 10);
-    document.getElementById("scorepersecond").innerHTML = scorepersecond;
-  }
-
-  function buyCursor() {
-    if (score >= Cursorcost) {
-      score = score - Cursorcost;
-      Cursors = Cursors + 1;
-      Cursorcost = Math.round(Cursorcost * 1.15) ;
-
-      document.getElementById("score").innerHTML = score;
-      document.getElementById("Cursorcost").innerHTML = Cursorcost;
-      document.getElementById("Cursors").innerHTML = Cursors;
-      updatescorepersecond(Cursors, Grandmas, Kaeyas) ;
-    }
-  }
-
-  function buyGrandma() {
-    if (score >= Grandmacost) {
-      score = score - Grandmacost;
-      Grandmas = Grandmas + 1;
-      Grandmacost = Math.round(Grandmacost * 1.15) ;
-
-      document.getElementById("score").innerHTML = score;
-      document.getElementById("Grandmacost").innerHTML = Grandmacost;
-      document.getElementById("Grandmas").innerHTML = Grandmas;
-      updatescorepersecond(Cursors, Grandmas, Kaeyas) ;
-    }
-  }
-  function buyKaeya() {
-    if (score >= Kaeyacost) {
-      score = score - Kaeyacost;
-      Kaeyas = Kaeyas + 1;
-      Kaeyacost = Math.round(Kaeyacost * 1.15) ;
-
-      document.getElementById("score").innerHTML = score;
-      document.getElementById("Kaeyacost").innerHTML = Kaeyacost;
-      document.getElementById("Kaeyas").innerHTML = Kaeyas;
-      updatescorepersecond(Cursors, Grandmas, Kaeyas) ;
-    }
-  }
-
-  function addToScore(amount) {
-    score = score + amount;
-    document.getElementById("score").innerHTML = score;
-  }
-
-  setInterval (function() {
-    score = score + Cursors;
-    score = score + (Grandmas * 5);
-    score = score + (Kaeyas * 10);
-    document.getElementById("score").innerHTML = score;
-
-    document.title = score + "-primogems - Genshin clicker"
-  }, 1000) ; //1000ms = 1 second
-</script>
 </head>
 
 <body>
@@ -105,24 +14,58 @@ font-weight: bold;
 
 <center>
 
-<div class="scorecontainer">
+<div class="scorecontainer unselectable">
 
 <span id="score">0</span> Primogems<br>
 <span id="scorepersecond">0</span> primogems per second
 </div>
 
 <br>
-<div class="clickercontainer">
-<img src="moneyprimogem.jpeg" height="300" width="300px" onclick="addToScore(clickingPower)">
+<div class="clickercontainer unselectable">
+<img src="moneyprimogem.jpeg" height="375px" width="375px" onclick="addToScore(clickingPower)">
 </div>
 </center>
-<div class="sectionright">
-
-<button onclick="buyCursor () ">Cursor [<span id="Cursorcost">15</span>] -- <span id="Cursors">0</span></button>
-<button onclick="buyGrandma () ">Grandma [<span id="Grandmacost">100</span>] -- <span id="Grandmas">0</span></button>
-<button onclick="buyKaeya () ">Kaeya [<span id="Kaeyacost">250</span>] -- <span id="Kaeyas">0</span></button>
-
 </div>
+
+<div class="sectionright">
+<table class="shopbutton unselectable" onclick="buyAmber()">
+  <tr>
+    <td id="image"><img src="lighter.jpg"></td>
+    <td id="nameandcost">
+      <p>Amber</p>
+      <p><span id="Ambercost">15</span> Primogems</p>
+    </td>
+<td id="amount"><span id="Ambers">0</span></td>
+</tr>
+</table>
+</div>
+
+<div class="sectionright">
+<table class="shopbutton unselectable" onclick="buyGrandma()">
+  <tr>
+    <td id="image"><img src="moneyprimogem.jpeg"></td>
+    <td id="nameandcost">
+      <p>Grandma</p>
+      <p><span id="Grandmacost">100</span> Primogems</p>
+    </td>
+<td id="amount"><span id="Grandmas">0</span></td>
+</tr>
+</table>
+</div>
+
+<div class="sectionright">
+<table class="shopbutton unselectable" onclick="buyKaeya()">
+  <tr>
+    <td id="image"><img src="moneyprimogem.jpeg"></td>
+    <td id="nameandcost">
+      <p>Kaeya</p>
+      <p><span id="Kaeyacost">1000</span> Primogems</p>
+    </td>
+<td id="amount"><span id="Kaeyas">0</span></td>
+</tr>
+</table>
+</div>
+
 
 </body>
 </HTML>

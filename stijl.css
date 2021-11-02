@@ -1,0 +1,69 @@
+
+.sectionleft {
+  float: left;
+  width: 80%;
+}
+
+.sectionright {
+  float: right;
+  width: 20%;
+}
+
+.scorecontainer {
+background-color: rgb(238, 238, 238, 0.6);
+width: 50%;
+padding: 10px;
+border-radius: 10px;
+forn-size: 24px;
+font-weight: bold;
+}
+
+.clickercontainer img {
+  position: relative;
+  transition: all .2s ease-in-out;
+}
+
+.clickercontainer img:hover { transform: scale(1.10); }
+.clickercontainer img:active { transform: scale(0.99); }
+
+.shopbutton {
+  background-color: #b5b5b5;
+  transition: all .2s ease-in-out;
+  border-radius: 10px;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+
+.shopbutton:hover {
+  background-color: #c7c7c7;
+  transition: all .2s ease-in-out;
+}
+
+.shopbutton #image {
+  width: 25%;
+}
+
+.shopbutton img {
+  height: 64px;
+  width: 64px;
+}
+
+.shopbutton #nameandcost p {
+  margin: 0px;
+  width: 60%;
+}
+
+.shopbutton #nameandcost p: first-of-type {
+  font-size: 24px;
+}
+
+.shopbutton #amount {
+  font-size: 48px;
+  color: #595959;
+  font-family: roboto;
+  width: 15%;
+}
+
+.unselectable {
+  user-select: none;
+}
