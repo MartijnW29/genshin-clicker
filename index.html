@@ -8,27 +8,27 @@
 <p>Primogems: <span id="score">0</span></p>
 <img scr="moneyprimogem.jpg" height="600" width="600px" onclick="addToScore(clickingPower)">
 
-<buttin onclick="buyCursor () ">Cursor [<span id="cursorcost">15</span>] -- <span id="cursors">0</span></button>
-<buttin onclick="buyGrandma () ">Grandma [<span id="grandmacost">100</span>] -- <span id="grandmas">0</span></button>
+<buttin onclick="buyCursor () ">Cursor [<span id="Cursorcost">15</span>] -- <span id="Cursors">0</span></button>
+<buttin onclick="buyGrandma () ">Grandma [<span id="Grandmacost">100</span>] -- <span id="Grandmas">0</span></button>
 
   <script>
     var score = 0;
     var clickingPower = 1
 
-    var cursorcost = 15;
-    var cursors = 0;
-    var grandmacost = 100;
-    var grandmas = 0;
+    var Cursorcost = 15;
+    var Cursors = 0;
+    var Grandmacost = 100;
+    var Grandmas = 0;
 
     function buyCursor() {
-      if (score >= cursorcost) {
-        score = score - cursorcost;
-        cursors = cursors + 1;
-        cursorcost = Math.round(cursorcost * 1,15) ;
+      if (score >= Cursorcost) {
+        score = score - Cursorcost;
+        Cursors = cursors + 1;
+        Cursorcost = Math.round(Cursorcost * 1,15) ;
 
         document.getElementById("score").innerHTML = score;
-        document.getElementById("cursorcost").innerHTML = cursorcost;
-        document.getElementById("cursors").innerHTML = cursors;
+        document.getElementById("Cursorcost").innerHTML = Cursorcost;
+        document.getElementById("Cursors").innerHTML = Cursors;
       }
     }
 
@@ -39,8 +39,8 @@
         cursorcost = Math.round(Grandmacost * 1,15) ;
 
         document.getElementById("score").innerHTML = score;
-        document.getElementById("Grandmacost").innerHTML = cursorcost;
-        document.getElementById("Grandmas").innerHTML = cursors;
+        document.getElementById("Grandmacost").innerHTML = Cursorcost;
+        document.getElementById("Grandmas").innerHTML = Cursors;
       }
     }
 
@@ -49,8 +49,8 @@
       document.getElementById("score").innerHTML = score;
     }
     setInterval (function() {
-      score = score + cursors;
-      score = score + grandmas * 5;
+      score = score + Cursors;
+      score = score + Grandmas * 5;
       document.getElementById("score").innerHTML = score;
     }, 1000) ; //1000ms = 1 second
     </script>
