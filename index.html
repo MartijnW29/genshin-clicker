@@ -4,8 +4,29 @@
 
 <style>
 .sectionleft {
-  float: left; hier ben je bezig 6:45
+  float: left;
+  width: 80%;
 }
+.sectionright {
+  float: right;
+  width: 20%;
+}
+.scorecontainer {
+background-color: rgb(238, 238, 238, 0.6);
+width: 50%;
+padding: 10px;
+border-radius: 10px;
+forn-size: 24px;
+font-weight: bold;
+}
+
+.clickercontainer img {
+  position: relative;
+}
+
+.clickercontainer img:hover { transform: scale(1.10); }
+.clickercontainer img:active { transform: scale(0.99); }
+
 </style>
 
 <script>
@@ -82,9 +103,20 @@
 
 <div class="sectionleft">
 
-<h1> <span id="score">0</span> Primogems<br> </h1>
+<center>
+
+<div class="scorecontainer">
+
+<span id="score">0</span> Primogems<br>
 <span id="scorepersecond">0</span> primogems per second
-<img src="moneyprimogem.jpg" height="600" width="600px" onclick="addToScore(clickingPower)">
+</div>
+
+<br>
+<div class="clickercontainer">
+<img src="moneyprimogem.jpeg" height="300" width="300px" onclick="addToScore(clickingPower)">
+</div>
+</center>
+<div class="sectionright">
 
 <button onclick="buyCursor () ">Cursor [<span id="Cursorcost">15</span>] -- <span id="Cursors">0</span></button>
 <button onclick="buyGrandma () ">Grandma [<span id="Grandmacost">100</span>] -- <span id="Grandmas">0</span></button>
