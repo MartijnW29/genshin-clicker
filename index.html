@@ -4,9 +4,8 @@
 </head>
 
 <body>
-  <img scr="moneyprimogem.jpg" width="300" height="300" alt="naam die te zien is als de foto niet inlaad">
 
-<p>Score: <span id="score">0</span></p>
+<p>Primogems: <span id="score">0</span></p>
 <img scr="moneyprimogem.jpg" height="600" width="600px" onclick="addToScore(clickingPower)">
 
 <buttin onclick="buyCursor () ">Cursor{ [<span id="cursorcost">15</span>] -- <span id="cursosr">0</span><button>
@@ -50,7 +49,7 @@
       document.getElementById("score").innerHTML = score;
     }
 
-setinterval (function() {
+setinterval(function() {
   score = score + cursors;
   score = score + grandmas * 5;
   document.getElementById("score").innerHTML = score;
