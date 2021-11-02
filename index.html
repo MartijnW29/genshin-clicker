@@ -23,7 +23,7 @@
     function buyCursor() {
       if (score >= Cursorcost) {
         score = score - Cursorcost;
-        Cursors = cursors + 1;
+        Cursors = Cursors + 1;
         Cursorcost = Math.round(Cursorcost * 1,15) ;
 
         document.getElementById("score").innerHTML = score;
@@ -35,8 +35,8 @@
     function buyGrandma() {
       if (score >= Grandmacost) {
         score = score - Grandmacost;
-        cursors = Grandmas + 1;
-        cursorcost = Math.round(Grandmacost * 1,15) ;
+        Cursors = Grandmas + 1;
+        Cursorcost = Math.round(Grandmacost * 1,15) ;
 
         document.getElementById("score").innerHTML = score;
         document.getElementById("Grandmacost").innerHTML = Cursorcost;
