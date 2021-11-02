@@ -1,6 +1,49 @@
 <HTML>
 <head>
 <title>Genshin clicker game</title>
+<script>
+  var score = 0;
+  var clickingPower = 1
+
+  var Cursorcost = 15;
+  var Cursors = 0;
+  var Grandmacost = 100;
+  var Grandmas = 0;
+
+  function buyCursor() {
+    if (score >= Cursorcost) {
+      score = score - Cursorcost;
+      Cursors = Cursors + 1;
+      Cursorcost = Math.round(Cursorcost * 1.15) ;
+
+      document.getElementById("score").innerHTML = score;
+      document.getElementById("Cursorcost").innerHTML = Cursorcost;
+      document.getElementById("Cursors").innerHTML = Cursors;
+    }
+  }
+
+  function buyGrandma() {
+    if (score >= Grandmacost) {
+      score = score - Grandmacost;
+      Grandmas = Grandmas + 1;
+      Grandmacost = Math.round(Grandmacost * 1.15) ;
+
+      document.getElementById("score").innerHTML = score;
+      document.getElementById("Grandmacost").innerHTML = Grandmacost;
+      document.getElementById("Grandmas").innerHTML = Grandmas;
+    }
+  }
+
+  function addToScore(amount) {
+    score = score + amount;
+    document.getElementById("score").innerHTML = score;
+  }
+  setInterval (function() {
+    score = score + Cursors;
+    score = score + (Grandmas * 5);
+    document.getElementById("score").innerHTML = score;
+  }, 1000) ; //1000ms = 1 second
+</script>
 </head>
 
 <body>
@@ -11,48 +54,6 @@
 <button onclick="buyCursor () ">Cursor [<span id="Cursorcost">15</span>] -- <span id="Cursors">0</span></button>
 <button onclick="buyGrandma () ">Grandma [<span id="Grandmacost">100</span>] -- <span id="Grandmas">0</span></button>
 
-  <script>
-    var score = 0;
-    var clickingPower = 1
 
-    var Cursorcost = 15;
-    var Cursors = 0;
-    var Grandmacost = 100;
-    var Grandmas = 0;
-
-    function buyCursor() {
-      if (score >= Cursorcost) {
-        score = score - Cursorcost;
-        Cursors = Cursors + 1;
-        Cursorcost = Math.round(Cursorcost * 1,15) ;
-
-        document.getElementById("score").innerHTML = score;
-        document.getElementById("Cursorcost").innerHTML = Cursorcost;
-        document.getElementById("Cursors").innerHTML = Cursors;
-      }
-    }
-
-    function buyGrandma() {
-      if (score >= Grandmacost) {
-        score = score - Grandmacost;
-        Cursors = Grandmas + 1;
-        Cursorcost = Math.round(Grandmacost * 1,15) ;
-
-        document.getElementById("score").innerHTML = score;
-        document.getElementById("Grandmacost").innerHTML = Cursorcost;
-        document.getElementById("Grandmas").innerHTML = Cursors;
-      }
-    }
-
-    function addToScore(amount) {
-      score = score + amount;
-      document.getElementById("score").innerHTML = score;
-    }
-    setInterval (function() {
-      score = score + Cursors;
-      score = score + Grandmas * 5;
-      document.getElementById("score").innerHTML = score;
-    }, 1000) ; //1000ms = 1 second
-    </script>
 </body>
 </HTML>
