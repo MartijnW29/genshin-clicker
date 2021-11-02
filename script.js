@@ -49,7 +49,7 @@ function addToScore(amount) {
   var Kaeyacost = 1000;
   var Kaeyas = 0;
 
-  function updatescorepersecond(Cursors, Grandmas, Kaeyas) {
+  function updatescorepersecond(Cursors, Lisas, Kaeyas) {
     scorepersecond = Ambers + (Lisas * 5) + (Kaeyas * 70);
     document.getElementById("scorepersecond").innerHTML = scorepersecond;
   }
