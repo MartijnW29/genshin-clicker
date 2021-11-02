@@ -11,19 +11,19 @@ function addToScore(amount) {
       document.getElementById("score").innerHTML = score;
       document.getElementById("Ambercost").innerHTML = Ambercost;
       document.getElementById("Ambers").innerHTML = Ambers;
-      updatescorepersecond(Ambers, Grandmas, Kaeyas) ;
+      updatescorepersecond(Ambers, Lisas, Kaeyas) ;
     }
   }
 
-  function buyGrandma() {
-    if (score >= Grandmacost) {
-      score = score - Grandmacost;
-      Grandmas = Grandmas + 1;
-      Grandmacost = Math.round(Grandmacost * 1.15) ;
+  function buyLisa() {
+    if (score >= Lisacost) {
+      score = score - Lisacost;
+      Lisas = Lisas + 1;
+      Lisacost = Math.round(Lisacost * 1.15) ;
       document.getElementById("score").innerHTML = score;
-      document.getElementById("Grandmacost").innerHTML = Grandmacost;
-      document.getElementById("Grandmas").innerHTML = Grandmas;
-      updatescorepersecond(Ambers, Grandmas, Kaeyas) ;
+      document.getElementById("Lisacost").innerHTML = Lisacost;
+      document.getElementById("Lisas").innerHTML = Lisas;
+      updatescorepersecond(Ambers, Lisas, Kaeyas) ;
     }
 
   }
@@ -35,7 +35,7 @@ function addToScore(amount) {
       document.getElementById("score").innerHTML = score;
       document.getElementById("Kaeyacost").innerHTML = Kaeyacost;
       document.getElementById("Kaeyas").innerHTML = Kaeyas;
-      updatescorepersecond(Ambers, Grandmas, Kaeyas) ;
+      updatescorepersecond(Ambers, Lisas, Kaeyas) ;
     }
   }
 
@@ -44,19 +44,19 @@ function addToScore(amount) {
 
   var Ambercost = 15;
   var Ambers = 0;
-  var Grandmacost = 100;
-  var Grandmas = 0;
+  var Lisacost = 100;
+  var Lisas = 0;
   var Kaeyacost = 1000;
   var Kaeyas = 0;
 
   function updatescorepersecond(Cursors, Grandmas, Kaeyas) {
-    scorepersecond = Ambers + (Grandmas * 5) + (Kaeyas * 70);
+    scorepersecond = Ambers + (Lisas * 5) + (Kaeyas * 70);
     document.getElementById("scorepersecond").innerHTML = scorepersecond;
   }
 
   setInterval (function() {
     score = score + Ambers;
-    score = score + (Grandmas * 5);
+    score = score + (Lisas * 5);
     score = score + (Kaeyas * 70);
     document.getElementById("score").innerHTML = score;
 
