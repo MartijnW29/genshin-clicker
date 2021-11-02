@@ -1,6 +1,13 @@
 <HTML>
 <head>
-<title>Genshin clicker game</title>
+<title>Genshin clicker</title>
+
+<style>
+.sectionleft {
+  float: left; hier ben je bezig 6:45
+}
+</style>
+
 <script>
   var score = 0;
   var clickingPower = 1
@@ -12,6 +19,11 @@
   var Kaeyacost = 250;
   var Kaeyas = 0;
 
+  function updatescorepersecond(Cursors, Grandmas, Kaeyas) {
+    scorepersecond = Cursors + (Grandmas * 5) + (Kaeyas * 10);
+    document.getElementById("scorepersecond").innerHTML = scorepersecond;
+  }
+
   function buyCursor() {
     if (score >= Cursorcost) {
       score = score - Cursorcost;
@@ -21,6 +33,7 @@
       document.getElementById("score").innerHTML = score;
       document.getElementById("Cursorcost").innerHTML = Cursorcost;
       document.getElementById("Cursors").innerHTML = Cursors;
+      updatescorepersecond(Cursors, Grandmas, Kaeyas) ;
     }
   }
 
@@ -33,6 +46,7 @@
       document.getElementById("score").innerHTML = score;
       document.getElementById("Grandmacost").innerHTML = Grandmacost;
       document.getElementById("Grandmas").innerHTML = Grandmas;
+      updatescorepersecond(Cursors, Grandmas, Kaeyas) ;
     }
   }
   function buyKaeya() {
@@ -44,6 +58,7 @@
       document.getElementById("score").innerHTML = score;
       document.getElementById("Kaeyacost").innerHTML = Kaeyacost;
       document.getElementById("Kaeyas").innerHTML = Kaeyas;
+      updatescorepersecond(Cursors, Grandmas, Kaeyas) ;
     }
   }
 
@@ -51,24 +66,31 @@
     score = score + amount;
     document.getElementById("score").innerHTML = score;
   }
+
   setInterval (function() {
     score = score + Cursors;
     score = score + (Grandmas * 5);
     score = score + (Kaeyas * 10);
     document.getElementById("score").innerHTML = score;
+
+    document.title = score + "-primogems - Genshin clicker"
   }, 1000) ; //1000ms = 1 second
 </script>
 </head>
 
 <body>
 
-<h1>Primogems: <span id="score">0</span></h1>
+<div class="sectionleft">
+
+<h1> <span id="score">0</span> Primogems<br> </h1>
+<span id="scorepersecond">0</span> primogems per second
 <img src="moneyprimogem.jpg" height="600" width="600px" onclick="addToScore(clickingPower)">
 
 <button onclick="buyCursor () ">Cursor [<span id="Cursorcost">15</span>] -- <span id="Cursors">0</span></button>
 <button onclick="buyGrandma () ">Grandma [<span id="Grandmacost">100</span>] -- <span id="Grandmas">0</span></button>
 <button onclick="buyKaeya () ">Kaeya [<span id="Kaeyacost">250</span>] -- <span id="Kaeyas">0</span></button>
 
+</div>
 
 </body>
 </HTML>
