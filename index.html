@@ -48,12 +48,11 @@
       score = score + amount;
       document.getElementById("score").innerHTML = score;
     }
-
-setinterval(function() {
-  score = score + cursors;
-  score = score + grandmas * 5;
-  document.getElementById("score").innerHTML = score;
-}, 1000) ; //1000ms = 1 second
-</script>
+    setinterval (function() {
+      score = score + cursors;
+      score = score + grandmas * 5;
+      document.getElementById("score").innerHTML = score;
+    }, 1000) ; //1000ms = 1 second
+    </script>
 </body>
 </HTML>
