@@ -43,7 +43,7 @@ function buyConstellation() {
     if (score >= Kaeyacost) {
       score = score - Kaeyacost;
       Kaeyas = Kaeyas + 1;
-      Kaeyacost = Math.round(Kaeyacost * 1.15) ;
+      Kaeyacost = Math.round(Kaeyacost * 1.35) ;
       document.getElementById("score").innerHTML = score;
       document.getElementById("Kaeyacost").innerHTML = Kaeyacost;
       document.getElementById("Kaeyas").innerHTML = Kaeyas;
