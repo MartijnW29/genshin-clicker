@@ -1,3 +1,6 @@
+dit savenwerkt via cookies
+
+
 function savegame() {
   var gamesave = {
     score: score,
