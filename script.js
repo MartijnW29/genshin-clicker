@@ -35,7 +35,7 @@ function buyConstellation() {
       document.getElementById("score").innerHTML = score;
       document.getElementById("Lisacost").innerHTML = Lisacost;
       document.getElementById("Lisas").innerHTML = Lisas;
-      updatescorepersecond(Constellations, Ambers, Lisas, Kaeyas, Bennetts) ;
+      updatescorepersecond(Constellations, Ambers, Lisas, Kaeyas, Bennetts, Razors) ;
     }
 
   }
@@ -47,7 +47,7 @@ function buyConstellation() {
       document.getElementById("score").innerHTML = score;
       document.getElementById("Kaeyacost").innerHTML = Kaeyacost;
       document.getElementById("Kaeyas").innerHTML = Kaeyas;
-      updatescorepersecond(Constellations, Ambers, Lisas, Kaeyas, Bennetts) ;
+      updatescorepersecond(Constellations, Ambers, Lisas, Kaeyas, Bennetts, Razors) ;
     }
   }
 
@@ -59,7 +59,19 @@ function buyConstellation() {
       document.getElementById("score").innerHTML = score;
       document.getElementById("Bennettcost").innerHTML = Bennettcost;
       document.getElementById("Bennetts").innerHTML = Bennetts;
-      updatescorepersecond(Constellations, Ambers, Lisas, Kaeyas, Bennetts) ;
+      updatescorepersecond(Constellations, Ambers, Lisas, Kaeyas, Bennetts, Razors) ;
+    }
+  }
+
+  function buyRazor() {
+    if (score >= Razorcost) {
+      score = score - Razorcost;
+      Razors = Razors + 1;
+      Razorcost = Math.round(Razor * 1.25) ;
+      document.getElementById("score").innerHTML = score;
+      document.getElementById("Razorcost").innerHTML = Razorcost;
+      document.getElementById("Razors").innerHTML = Razors;
+      updatescorepersecond(Constellations, Ambers, Lisas, Kaeyas, Bennetts, Razors) ;
     }
   }
 
@@ -74,18 +86,21 @@ function buyConstellation() {
   var Kaeyacost = 1000;
   var Kaeyas = 0;
   var Bennettcost = 10000;
-  var Bennetts =0;
+  var Bennetts = 0;
+  var Razorcost = 50000;
+  var Razors = 0;
 
   function updatescorepersecond(Constellations, Ambers, Lisas, Kaeyas, Bennetts) {
-    scorepersecond = (Ambers * (Constellations + 1)) + (Lisas * 5 * (Constellations + 1)) + (Kaeyas * 40 * (Constellations + 1)) + (Bennetts * 125 * (Constellations + 1));
+    scorepersecond = (Ambers * (Constellations + 1)) + (Lisas * 5 * (Constellations + 1)) + (Kaeyas * 20 * (Constellations + 1)) + (Bennetts * 100 * (Constellations + 1)) + (Razors * 250 * (Constellations + 1));
     document.getElementById("scorepersecond").innerHTML = scorepersecond;
   }
 
   setInterval (function() {
     score = score + (Ambers * (Constellations + 1));
     score = score + (Lisas * 5 * (Constellations + 1));
-    score = score + (Kaeyas * 40 * (Constellations + 1));
-    score = score + (Bennetts * 125 * (Constellations + 1));
+    score = score + (Kaeyas * 20 * (Constellations + 1));
+    score = score + (Bennetts * 100 * (Constellations + 1));
+    score = score + (Razors * 250 * (Constellations + 1));
     document.getElementById("score").innerHTML = score;
 
     document.title = score + "-primogems - Genshin clicker"
