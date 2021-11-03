@@ -19,7 +19,7 @@ function buyConstellation() {
     if (score >= Ambercost) {
       score = score - Ambercost;
       Ambers = Ambers + 1;
-      Ambercost = Math.round(Ambercost * 1.15) ;
+      Ambercost = Math.round(Ambercost * 1.25) ;
       document.getElementById("score").innerHTML = score;
       document.getElementById("Ambercost").innerHTML = Ambercost;
       document.getElementById("Ambers").innerHTML = Ambers;
@@ -31,7 +31,7 @@ function buyConstellation() {
     if (score >= Lisacost) {
       score = score - Lisacost;
       Lisas = Lisas + 1;
-      Lisacost = Math.round(Lisacost * 1.15) ;
+      Lisacost = Math.round(Lisacost * 1.25) ;
       document.getElementById("score").innerHTML = score;
       document.getElementById("Lisacost").innerHTML = Lisacost;
       document.getElementById("Lisas").innerHTML = Lisas;
@@ -43,7 +43,7 @@ function buyConstellation() {
     if (score >= Kaeyacost) {
       score = score - Kaeyacost;
       Kaeyas = Kaeyas + 1;
-      Kaeyacost = Math.round(Kaeyacost * 1.35) ;
+      Kaeyacost = Math.round(Kaeyacost * 1.25) ;
       document.getElementById("score").innerHTML = score;
       document.getElementById("Kaeyacost").innerHTML = Kaeyacost;
       document.getElementById("Kaeyas").innerHTML = Kaeyas;
@@ -55,7 +55,7 @@ function buyConstellation() {
     if (score >= Bennettcost) {
       score = score - Bennettcost;
       Bennetts = Bennetts + 1;
-      Bennettcost = Math.round(Bennettcost * 1.15) ;
+      Bennettcost = Math.round(Bennettcost * 1.25) ;
       document.getElementById("score").innerHTML = score;
       document.getElementById("Bennettcost").innerHTML = Bennettcost;
       document.getElementById("Bennetts").innerHTML = Bennetts;
