@@ -65,8 +65,8 @@ function buyConstellation() {
 
   var score = 0;
   var clickingPower = 1
-  var Constelationcost = 1000
-  var Constelations = 0
+  var Constellationcost = 1000
+  var Constellations = 0
   var Ambercost = 15;
   var Ambers = 0;
   var Lisacost = 100;
