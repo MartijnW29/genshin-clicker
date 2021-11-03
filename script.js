@@ -82,7 +82,7 @@ function buyConstellation() {
   }
 
   setInterval (function() {
-    score = score + (Ambers * (Constellation + 1));
+    score = score + (Ambers * (Constellations + 1));
     score = score + (Lisas * 5 * (Constellations + 1));
     score = score + (Kaeyas * 40 * (Constellations + 1));
     score = score + (Bennetts * 125 * (Constellations + 1));
