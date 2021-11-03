@@ -67,3 +67,7 @@ font-weight: bold;
 .unselectable {
   user-select: none;
 }
+
+.sectionfooter {
+  margin-top 20%
+}
