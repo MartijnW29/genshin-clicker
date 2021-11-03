@@ -90,7 +90,7 @@ function buyConstellation() {
   var Razorcost = 50000;
   var Razors = 0;
 
-  function updatescorepersecond(Constellations, Ambers, Lisas, Kaeyas, Bennetts) {
+  function updatescorepersecond(Constellations, Ambers, Lisas, Kaeyas, Bennetts, Razors) {
     scorepersecond = (Ambers * (Constellations + 1)) + (Lisas * 5 * (Constellations + 1)) + (Kaeyas * 20 * (Constellations + 1)) + (Bennetts * 100 * (Constellations + 1)) + (Razors * 250 * (Constellations + 1));
     document.getElementById("scorepersecond").innerHTML = scorepersecond;
   }
