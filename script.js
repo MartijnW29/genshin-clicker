@@ -160,4 +160,4 @@ function addToScore(amount) {
     document.getElementById("score").innerHTML = score;
 
     document.title = score + "-primogems - Genshin clicker"
-  }, 1000) ; //1000ms = 1 second
+  }, 1) ; //1000ms = 1 second
