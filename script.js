@@ -169,8 +169,8 @@ function addToScore(amount) {
   }, 100) ; //1000ms = 1 second
 
   setInterval (function() {
-    score = score + (0.01 * Bennetts * 100 * (BennettConstellations + 1));
-    score = score + (0.01 * Razors * 250 * (RazorConstellations + 1));
+    score = score + (0.1 * Bennetts * 100 * (BennettConstellations + 1));
+    score = score + (0.1 * Razors * 250 * (RazorConstellations + 1));
     document.getElementById("score").innerHTML = score;
 
     document.title = score + "-primogems - Genshin clicker"
