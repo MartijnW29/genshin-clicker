@@ -161,9 +161,14 @@ function addToScore(amount) {
 
   setInterval (function() {
     score = score + (0.1 * Kaeyas * 20 * (KaeyaConstellations + 1));
-    score = score + (0.1 * Bennetts * 100 * (BennettConstellations + 1));
-    score = score + (0.1 * Razors * 250 * (RazorConstellations + 1));
     document.getElementById("score").innerHTML = score;
 
     document.title = score + "-primogems - Genshin clicker"
   }, 100) ; //1000ms = 1 second
+  setInterval (function() {
+    score = score + (0.01 * Bennetts * 100 * (BennettConstellations + 1));
+      score = score + (0.01 * Razors * 300 * (RazorConstellations + 1));
+    document.getElementById("score").innerHTML = score;
+
+    document.title = score + "-primogems - Genshin clicker"
+  }, 10) ; //1000ms = 1 second
