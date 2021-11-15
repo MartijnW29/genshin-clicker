@@ -147,7 +147,7 @@ function addToScore(amount) {
   var RazorConstellations = 0
 
   function updatescorepersecond(Ambers, AmberConstellations, Lisas, LisaConstellations, Kaeyas, KaeyaConstellations, Benetts, BennettConstellations, Razors, RazorConstellations) {
-    scorepersecond = (Ambers * (AmberConstellations + 1)) + (Lisas * 5 * (LisaConstellations + 1)) + (Kaeyas * 20 * (KaeyaConstellations + 1)) + (Bennetts * 100 * (BennettConstellations + 1)) + (Razors * 250 * (RazorConstellations + 1));
+    scorepersecond = (Ambers * (AmberConstellations + 1)) + (Lisas * 5 * (LisaConstellations + 1)) + (Kaeyas * 20 * (KaeyaConstellations + 1)) + (Bennetts * 100 * (BennettConstellations + 1)) + (Razors * 300 * (RazorConstellations + 1));
     document.getElementById("scorepersecond").innerHTML = scorepersecond;
   }
 
