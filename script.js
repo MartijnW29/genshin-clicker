@@ -155,7 +155,7 @@ function addToScore(amount) {
       scorepersecond = (Ambers * (AmberConstellations + 1)) + (Lisas * 5 * (LisaConstellations + 1)) + (Kaeyas * 20 * (KaeyaConstellations + 1)) + (Bennetts * 100 * (BennettConstellations + 1)) + (Razors * 300 * (RazorConstellations + 1));
       document.getElementById("scorepersecond").innerHTML = scorepersecond;
 
-  }, 1000) ; //1000ms = 1 second
+  }, 10) ; //1000ms = 1 second
 
   setInterval (function() {
     score = score + (Ambers * (AmberConstellations + 1));
@@ -184,5 +184,6 @@ function addToScore(amount) {
 
   setInterval (function() {
     Ambers = Ambers + Amberfabricators;
-
+    document.getElementById("Ambercost").innerHTML = Ambercost;
+    document.getElementById("Ambers").innerHTML = Ambers;
   }, 1000) ; //1000ms = 1 second
