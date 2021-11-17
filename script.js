@@ -11,7 +11,6 @@ function addToScore(amount) {
       document.getElementById("score").innerHTML = score;
       document.getElementById("Ambercost").innerHTML = Ambercost;
       document.getElementById("Ambers").innerHTML = Ambers;
-      updatescorepersecond(Ambers, AmberConstellations, Lisas, LisaConstellations, Kaeyas, KaeyaConstellations, Bennetts, BennettConstellations, Razors, RazorConstellations) ;
     }
   }
 
@@ -23,7 +22,17 @@ function addToScore(amount) {
       document.getElementById("score").innerHTML = score;
       document.getElementById("AmberConstellationcost").innerHTML = AmberConstellationcost;
       document.getElementById("AmberConstellations").innerHTML = AmberConstellations;
-      updatescorepersecond(Ambers, AmberConstellations, Lisas, LisaConstellations, Kaeyas, KaeyaConstellations, Bennetts, BennettConstellations, Razors, RazorConstellations) ;
+    }
+  }
+
+  function buyAmberfabricator() {
+    if (score >= Amberfabricatorcost) {
+      score = score - Amberfabricatorcost;
+      Amberfabricators = Amberfabricators + 1;
+      Amberfabricatorcost = Math.round(Amberfabricatorcost * 1.25) ;
+      document.getElementById("score").innerHTML = score;
+      document.getElementById("Amberfabricatorcost").innerHTML = Amberfabricatorcost;
+      document.getElementById("Amberfabricators").innerHTML = Amberfabricators;
     }
   }
 
@@ -35,7 +44,6 @@ function addToScore(amount) {
       document.getElementById("score").innerHTML = score;
       document.getElementById("Lisacost").innerHTML = Lisacost;
       document.getElementById("Lisas").innerHTML = Lisas;
-      updatescorepersecond(Ambers, AmberConstellations, Lisas, LisaConstellations, Kaeyas, KaeyaConstellations, Bennetts, BennettConstellations, Razors, RazorConstellations) ;
     }
   }
 
@@ -47,7 +55,6 @@ function addToScore(amount) {
       document.getElementById("score").innerHTML = score;
       document.getElementById("LisaConstellationcost").innerHTML = LisaConstellationcost;
       document.getElementById("LisaConstellations").innerHTML = LisaConstellations;
-      updatescorepersecond(Ambers, AmberConstellations, Lisas, LisaConstellations, Kaeyas, KaeyaConstellations, Bennetts, BennettConstellations, Razors, RazorConstellations) ;
     }
   }
 
@@ -59,7 +66,6 @@ function addToScore(amount) {
       document.getElementById("score").innerHTML = score;
       document.getElementById("Kaeyacost").innerHTML = Kaeyacost;
       document.getElementById("Kaeyas").innerHTML = Kaeyas;
-      updatescorepersecond(Ambers, AmberConstellations, Lisas, LisaConstellations, Kaeyas, KaeyaConstellations, Bennetts, BennettConstellations, Razors, RazorConstellations) ;
     }
   }
 
@@ -71,7 +77,6 @@ function addToScore(amount) {
       document.getElementById("score").innerHTML = score;
       document.getElementById("KaeyaConstellationcost").innerHTML = KaeyaConstellationcost;
       document.getElementById("KaeyaConstellations").innerHTML = KaeyaConstellations;
-      updatescorepersecond(Ambers, AmberConstellations, Lisas, LisaConstellations, Kaeyas, KaeyaConstellations, Bennetts, BennettConstellations, Razors, RazorConstellations) ;
     }
   }
 
@@ -83,7 +88,6 @@ function addToScore(amount) {
       document.getElementById("score").innerHTML = score;
       document.getElementById("Bennettcost").innerHTML = Bennettcost;
       document.getElementById("Bennetts").innerHTML = Bennetts;
-      updatescorepersecond(AmberConstellations, Ambers, Lisas, LisaConstellations, Kaeyas, KaeyaConstellations, Bennetts, BennettConstellations, Razors, RazorConstellations) ;
     }
   }
 
@@ -95,7 +99,6 @@ function addToScore(amount) {
       document.getElementById("score").innerHTML = score;
       document.getElementById("BennettConstellationcost").innerHTML = BennettConstellationcost;
       document.getElementById("BennettConstellations").innerHTML = BennettConstellations;
-      updatescorepersecond(Ambers, AmberConstellations, Lisas, LisaConstellations, Kaeyas, KaeyaConstellations, Bennetts, BennettConstellations, Razors, RazorConstellations) ;
     }
   }
 
@@ -107,7 +110,6 @@ function addToScore(amount) {
       document.getElementById("score").innerHTML = score;
       document.getElementById("Razorcost").innerHTML = Razorcost;
       document.getElementById("Razors").innerHTML = Razors;
-      updatescorepersecond(Ambers, AmberConstellations, Lisas, LisaConstellations, Kaeyas, KaeyaConstellations, Bennetts, BennettConstellations, Razors, RazorConstellations) ;
     }
   }
 
@@ -119,37 +121,41 @@ function addToScore(amount) {
       document.getElementById("score").innerHTML = score;
       document.getElementById("RazorConstellationcost").innerHTML = RazorConstellationcost;
       document.getElementById("RazorConstellations").innerHTML = RazorConstellations;
-      updatescorepersecond(Ambers, AmberConstellations, Lisas, LisaConstellations, Kaeyas, KaeyaConstellations, Bennetts, BennettConstellations, Razors, RazorConstellations) ;
     }
   }
 
   var score = 0;
-  var clickingPower = 1
+  var clickingPower = 1;
   var Ambercost = 15;
   var Ambers = 0;
-  var AmberConstellationcost = 100
-  var AmberConstellations = 0
+  var AmberConstellationcost = 100;
+  var AmberConstellations = 0;
+  var Amberfabricatorcost = 100000;
+  var Amberfabricators = 0;
   var Lisacost = 100;
   var Lisas = 0;
-  var LisaConstellationcost = 1000
-  var LisaConstellations = 0
+  var LisaConstellationcost = 1000;
+  var LisaConstellations = 0;
   var Kaeyacost = 1000;
   var Kaeyas = 0;
-  var KaeyaConstellationcost = 10000
-  var KaeyaConstellations = 0
+  var KaeyaConstellationcost = 10000;
+  var KaeyaConstellations = 0;
   var Bennettcost = 10000;
   var Bennetts = 0;
-  var BennettConstellationcost = 100000
-  var BennettConstellations = 0
+  var BennettConstellationcost = 100000;
+  var BennettConstellations = 0;
   var Razorcost = 50000;
   var Razors = 0;
-  var RazorConstellationcost = 1000000
-  var RazorConstellations = 0
+  var RazorConstellationcost = 1000000;
+  var RazorConstellations = 0;
 
-  function updatescorepersecond(Ambers, AmberConstellations, Lisas, LisaConstellations, Kaeyas, KaeyaConstellations, Benetts, BennettConstellations, Razors, RazorConstellations) {
-    scorepersecond = (Ambers * (AmberConstellations + 1)) + (Lisas * 5 * (LisaConstellations + 1)) + (Kaeyas * 20 * (KaeyaConstellations + 1)) + (Bennetts * 100 * (BennettConstellations + 1)) + (Razors * 300 * (RazorConstellations + 1));
-    document.getElementById("scorepersecond").innerHTML = scorepersecond;
-  }
+
+
+  setInterval (function updatescorepersecond() {
+      scorepersecond = (Ambers * (AmberConstellations + 1)) + (Lisas * 5 * (LisaConstellations + 1)) + (Kaeyas * 20 * (KaeyaConstellations + 1)) + (Bennetts * 100 * (BennettConstellations + 1)) + (Razors * 300 * (RazorConstellations + 1));
+      document.getElementById("scorepersecond").innerHTML = scorepersecond;
+
+  }, 1000) ; //1000ms = 1 second
 
   setInterval (function() {
     score = score + (Ambers * (AmberConstellations + 1));
@@ -157,6 +163,7 @@ function addToScore(amount) {
     document.getElementById("score").innerHTML = score;
 
     document.title = score + "-primogems - Genshin clicker"
+
   }, 1000) ; //1000ms = 1 second
 
   setInterval (function() {
@@ -164,6 +171,7 @@ function addToScore(amount) {
     document.getElementById("score").innerHTML = score;
 
     document.title = score + "-primogems - Genshin clicker"
+
   }, 100) ; //1000ms = 1 second
   setInterval (function() {
     score = score + (0.01 * Bennetts * 100 * (BennettConstellations + 1));
@@ -171,4 +179,10 @@ function addToScore(amount) {
     document.getElementById("score").innerHTML = score;
 
     document.title = score + "-primogems - Genshin clicker"
+
   }, 10) ; //1000ms = 1 second
+
+  setInterval (function() {
+    Ambers = Ambers + Amberfabricators;
+
+  }, 1000) ; //1000ms = 1 second
