@@ -124,6 +124,14 @@ function addToScore(amount) {
     }
   }
 
+  function changePriceColor(price, priceID) {
+    if (score < price) {
+      document.getElementById(priceID).style.color = "red";
+    } else {
+      document.getElementById(priceID).style.color = "black";
+    }
+  }
+
   var score = 0;
   var clickingPower = 1;
   var Ambercost = 15;
@@ -149,7 +157,19 @@ function addToScore(amount) {
   var RazorConstellationcost = 1000000;
   var RazorConstellations = 0;
 
-
+  setInterval (function() {
+    changePriceColor(Ambercost, "Ambercost");
+    changePriceColor(AmberConstellationcost, "AmberConstellationcost");
+    changePriceColor(Amberfabricatorcost, "Amberfabricatorcost");
+    changePriceColor(Lisacost, "Lisacost");
+    changePriceColor(LisaConstellationcost, "LisaConstellationcost");
+    changePriceColor(Kaeyacost, "Kaeyacost");
+    changePriceColor(KaeyaConstellationcost, "KaeyaConstellationcost");
+    changePriceColor(Bennettcost, "Bennettcost");
+    changePriceColor(BennettConstellationcost, "BennettConstellationcost");
+    changePriceColor(Razorcost, "Razorcost");
+    changePriceColor(RazorConstellationcost, "RazorConstellationcost");
+  }, 10);//10ms = 0.01sec
 
   setInterval (function updatescorepersecond() {
       scorepersecond = (Ambers * (AmberConstellations + 1)) + (Lisas * 5 * (LisaConstellations + 1)) + (Kaeyas * 20 * (KaeyaConstellations + 1)) + (Bennetts * 100 * (BennettConstellations + 1)) + (Razors * 300 * (RazorConstellations + 1));
