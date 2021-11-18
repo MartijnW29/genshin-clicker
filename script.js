@@ -186,4 +186,4 @@ function addToScore(amount) {
     Ambers = Ambers + Amberfabricators;
     document.getElementById("Ambercost").innerHTML = Ambercost;
     document.getElementById("Ambers").innerHTML = Ambers;
-  }, 1000) ; //100ms = 1 second
+  }, 1000) ; //1000ms = 1 second
