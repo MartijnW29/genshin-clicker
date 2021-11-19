@@ -128,7 +128,6 @@ function addToScore(amount) {
     localStorage.setItem("BennettConstellations", BennettConstellations);
     localStorage.setItem("Razorcost", Razorcost);
     localStorage.setItem("Razors", Razors);
-    localStorage.setItem("Razorcost", Razorcost);
     localStorage.setItem("RazorConstellationcost", RazorConstellationcost);
     localStorage.setItem("RazorConstellations", RazorConstellations);
   }
@@ -138,7 +137,7 @@ function addToScore(amount) {
     var Ambers = checkForStorage(localStorage.Ambers, 0, "Ambers");
     var AmberConstellationcost = checkForStorage(localStorage.AmberConstellationcost, 100, "AmberConstellationcost");
     var AmberConstellations = checkForStorage(localStorage.AmberConstellations, 0, "AmberConstellations");
-    var Amberfabricatorcost = checkForStorage(localStorage.Amberfabricatorcost, 100000, Amberfabricatorcost);
+    var Amberfabricatorcost = checkForStorage(localStorage.Amberfabricatorcost, 100000, "Amberfabricatorcost");
     var Amberfabricators = checkForStorage(localStorage.Amberfabricators, 0, "Amberfabricators");
     var Lisacost = checkForStorage(localStorage.Lisacost, 100, "Lisacost");
     var Lisas = checkForStorage(localStorage.Lisas, 0, "Lisas");
@@ -158,29 +157,30 @@ function addToScore(amount) {
     var RazorConstellations = checkForStorage(localStorage.RazorConstellations, 0, "RazorConstellations");
 
 function ResetProgress() {
-  var score = 0;
-  var Ambercost = 15;
-  var Ambers = 0;
-  var AmberConstellationcost = 100;
-  var AmberConstellations = 0;
-  var Amberfabricatorcost = 100000;
-  var Amberfabricators = 0;
-  var Lisacost = 100;
-  var Lisas = 0;
-  var LisaConstellationcost = 1000;
-  var LisaConstellations = 0;
-  var Kaeyacost = 1000;
-  var Kaeyas = 0;
-  var KaeyaConstellationcost = 10000;
-  var KaeyaConstellations = 0;
-  var Bennettcost = 10000;
-  var Bennetts = 0;
-  var BennettConstellationcost = 100000;
-  var BennettConstellations = 0;
-  var Razorcost = 50000;
-  var Razors = 0;
-  var RazorConstellationcost = 1000000;
-  var RazorConstellations = 0; 
+  localStorage.setItem("primogems", 0);
+  localStorage.setItem("Ambercost", 15);
+  localStorage.setItem("Ambers", 0);
+  localStorage.setItem("AmberConstellationcost", 100);
+  localStorage.setItem("AmberConstellations", 0);
+  localStorage.setItem("Amberfabricatorcost", 100000);
+  localStorage.setItem("Amberfabricators", 0);
+  localStorage.setItem("Lisacost", 100);
+  localStorage.setItem("Lisas", 0);
+  localStorage.setItem("LisaConstellationcost", 1000);
+  localStorage.setItem("LisaConstellations", 0);
+  localStorage.setItem("Kaeyacost", 1000);
+  localStorage.setItem("Kaeyas", 0);
+  localStorage.setItem("KaeyaConstellationcost", 10000);
+  localStorage.setItem("KaeyaConstellations", 0);
+  localStorage.setItem("Bennettcost", 10000);
+  localStorage.setItem("Bennetts", 0);
+  localStorage.setItem("BennettConstellationcost", 100000);
+  localStorage.setItem("BennettConstellations", 0);
+  localStorage.setItem("Razorcost", 50000);
+  localStorage.setItem("Razors", 0);
+  localStorage.setItem("RazorConstellationcost", 1000000);
+  localStorage.setItem("RazorConstellations", 0);
+  window.location.reload(true);
 }
 
   setInterval (function() {
