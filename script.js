@@ -2,6 +2,23 @@ function addToScore(amount) {
   score = score + amount;
 }
 
+function checkForStorage(thingtocheck, normal, name) {
+  if (thingtocheck) {
+    console.log(thingtocheck);
+    return Number(localStorage.getItem(name));
+  } else {
+    return normal;
+  }
+}
+
+function changePriceColor(price, priceID) {
+  if (score < price) {
+    document.getElementById(priceID).style.color = "red";
+  } else {
+    document.getElementById(priceID).style.color = "black";
+  }
+}
+
   function buyAmber() {
     if (score >= Ambercost) {
       score -= Ambercost;
@@ -90,22 +107,6 @@ function addToScore(amount) {
     }
   }
 
-  function checkForStorage(thingtocheck, normal, name) {
-    if (thingtocheck) {
-      console.log(thingtocheck);
-      return Number(localStorage.getItem(name));
-    } else {
-      return normal;
-    }
-  }
-
-  function changePriceColor(price, priceID) {
-    if (score < price) {
-      document.getElementById(priceID).style.color = "red";
-    } else {
-      document.getElementById(priceID).style.color = "black";
-    }
-  }
   function updateSavedData(){
     localStorage.setItem("primogems", score);
     localStorage.setItem("Ambercost", Ambercost);
@@ -195,7 +196,7 @@ function ResetProgress() {
     changePriceColor(BennettConstellationcost, "BennettConstellationcost");
     changePriceColor(Razorcost, "Razorcost");
     changePriceColor(RazorConstellationcost, "RazorConstellationcost");
-  }, 1000);//1000ms = 1 second
+  }, 1000); //1000ms = 1 second
 
   setInterval (function updatescorepersecond() {
       scorepersecond = (Ambers * (AmberConstellations + 1)) + (Lisas * 5 * (LisaConstellations + 1)) + (Kaeyas * 20 * (KaeyaConstellations + 1)) + (Bennetts * 100 * (BennettConstellations + 1)) + (Razors * 300 * (RazorConstellations + 1));
@@ -223,6 +224,7 @@ function ResetProgress() {
       document.getElementById("Razors").innerHTML = Razors;
       document.getElementById("RazorConstellationcost").innerHTML = RazorConstellationcost;
       document.getElementById("RazorConstellations").innerHTML = RazorConstellations;
+
       document.title = score + "-primogems - Genshin clicker";
   }, 100) ; //100ms = 0.1 second
 
