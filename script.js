@@ -196,7 +196,7 @@ function ResetProgress() {
     changePriceColor(BennettConstellationcost, "BennettConstellationcost");
     changePriceColor(Razorcost, "Razorcost");
     changePriceColor(RazorConstellationcost, "RazorConstellationcost");
-  }, 1000); //1000ms = 1 second
+  }, 100); //100ms = 0.1 second
 
   setInterval (function updatescorepersecond() {
       scorepersecond = (Ambers * (AmberConstellations + 1)) + (Lisas * 5 * (LisaConstellations + 1)) + (Kaeyas * 20 * (KaeyaConstellations + 1)) + (Bennetts * 100 * (BennettConstellations + 1)) + (Razors * 300 * (RazorConstellations + 1));
