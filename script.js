@@ -224,7 +224,6 @@ function ResetProgress() {
       document.getElementById("Razors").innerHTML = Razors;
       document.getElementById("RazorConstellationcost").innerHTML = RazorConstellationcost;
       document.getElementById("RazorConstellations").innerHTML = RazorConstellations;
-
       document.title = score + "-primogems - Genshin clicker";
   }, 100) ; //100ms = 0.1 second
 
