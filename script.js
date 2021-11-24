@@ -147,7 +147,9 @@ function changePriceColor(price, priceID) {
     localStorage.setItem("Razors", Razors);
     localStorage.setItem("RazorConstellationcost", RazorConstellationcost);
     localStorage.setItem("RazorConstellations", RazorConstellations);
+    localStorage.setItem("Dionacost", Dionacost);
     localStorage.setItem("Dionas", Dionas);
+    localStorage.setItem("DionaConstellationcost", DionaConstellationcost);
     localStorage.setItem("DionaConstellations", DionaConstellations);
   }
     var clickingPower = 1;
@@ -233,7 +235,7 @@ function ResetProgress() {
       (Bennetts * 100 * (BennettConstellations + 1)) +
       (Razors * 300 * (RazorConstellations + 1)) +
       (Dionas * 1600 * (DionaConstellations + 1));
-      
+
       document.getElementById("scorepersecond").innerHTML = scorepersecond;
       document.getElementById("score").innerHTML = score;
       document.getElementById("Ambercost").innerHTML = Ambercost;
