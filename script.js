@@ -107,6 +107,22 @@ function changePriceColor(price, priceID) {
     }
   }
 
+  function buyDiona() {
+    if (score >= Dionacost) {
+      score -= Dionacost;
+      Dionas += 1;
+      Dionacost = Math.round(Dionacost * 1.25) ;
+    }
+  }
+
+  function buyDionaConstellation() {
+    if (score >= DionaConstellationcost) {
+      score -= DionaConstellationcost;
+      DionaConstellations += 1;
+      DionaConstellationcost = Math.round(DionaConstellationcost * 1.25) ;
+    }
+  }
+
   function updateSavedData(){
     localStorage.setItem("primogems", score);
     localStorage.setItem("Ambercost", Ambercost);
@@ -131,6 +147,8 @@ function changePriceColor(price, priceID) {
     localStorage.setItem("Razors", Razors);
     localStorage.setItem("RazorConstellationcost", RazorConstellationcost);
     localStorage.setItem("RazorConstellations", RazorConstellations);
+    localStorage.setItem("Dionas", Dionas);
+    localStorage.setItem("DionaConstellations", DionaConstellations);
   }
     var clickingPower = 1;
     var score = checkForStorage(localStorage.primogems, 0, "primogems");
@@ -156,6 +174,10 @@ function changePriceColor(price, priceID) {
     var Razors = checkForStorage(localStorage.Razors, 0, "Razors");
     var RazorConstellationcost = checkForStorage(localStorage.RazorConstellationcost, 1000000, "RazorConstellationcost");
     var RazorConstellations = checkForStorage(localStorage.RazorConstellations, 0, "RazorConstellations");
+    var Dionacost = checkForStorage(localStorage.Dionacost, 500000, "Dionacost");
+    var Dionas = checkForStorage(localStorage.Razors, 0, "Dionas");
+    var DionaConstellationcost = checkForStorage(localStorage.DionaConstellationcost, 10000000, "DionaConstellationcost");
+    var DionaConstellations = checkForStorage(localStorage.DionaConstellations, 0, "DionaConstellations")
 
 function ResetProgress() {
   localStorage.setItem("primogems", 0);
@@ -181,6 +203,10 @@ function ResetProgress() {
   localStorage.setItem("Razors", 0);
   localStorage.setItem("RazorConstellationcost", 1000000);
   localStorage.setItem("RazorConstellations", 0);
+  localStorage.setItem("Dionacost", 500000);
+  localStorage.setItem("Dionas", 0);
+  localStorage.setItem("DionaConstellationcost", 10000000);
+  localStorage.setItem("DionaConstellations", 0);
   window.location.reload(true);
 }
 
@@ -196,10 +222,18 @@ function ResetProgress() {
     changePriceColor(BennettConstellationcost, "BennettConstellationcost");
     changePriceColor(Razorcost, "Razorcost");
     changePriceColor(RazorConstellationcost, "RazorConstellationcost");
+    changePriceColor(Dionacost, "Dionacost");
+    changePriceColor(DionaConstellationcost, "DionaConstellationcost");
   }, 100); //100ms = 0.1 second
 
   setInterval (function updatescorepersecond() {
-      scorepersecond = (Ambers * (AmberConstellations + 1)) + (Lisas * 5 * (LisaConstellations + 1)) + (Kaeyas * 20 * (KaeyaConstellations + 1)) + (Bennetts * 100 * (BennettConstellations + 1)) + (Razors * 300 * (RazorConstellations + 1));
+      scorepersecond = (Ambers * (AmberConstellations + 1)) +
+      (Lisas * 5 * (LisaConstellations + 1)) +
+      (Kaeyas * 20 * (KaeyaConstellations + 1)) +
+      (Bennetts * 100 * (BennettConstellations + 1)) +
+      (Razors * 300 * (RazorConstellations + 1)) +
+      (Dionas * 1600 * (DionaConstellations + 1));
+      
       document.getElementById("scorepersecond").innerHTML = scorepersecond;
       document.getElementById("score").innerHTML = score;
       document.getElementById("Ambercost").innerHTML = Ambercost;
@@ -224,6 +258,10 @@ function ResetProgress() {
       document.getElementById("Razors").innerHTML = Razors;
       document.getElementById("RazorConstellationcost").innerHTML = RazorConstellationcost;
       document.getElementById("RazorConstellations").innerHTML = RazorConstellations;
+      document.getElementById("Dionacost").innerHTML = Dionacost;
+      document.getElementById("Dionas").innerHTML = Dionas;
+      document.getElementById("DionaConstellationcost").innerHTML = DionaConstellationcost;
+      document.getElementById("DionaConstellations").innerHTML = DionaConstellations;
       document.title = score + "-primogems - Genshin clicker";
   }, 100) ; //100ms = 0.1 second
 
@@ -237,7 +275,8 @@ function ResetProgress() {
   }, 100) ; //100ms = 0.1 second
   setInterval (function() {
     score = score + (0.01 * Bennetts * 100 * (BennettConstellations + 1));
-      score = score + (0.01 * Razors * 300 * (RazorConstellations + 1));
+    score = score + (0.01 * Razors * 300 * (RazorConstellations + 1));
+    score = score + (0.01 * Dionas * 1600 * (DionaConstellations + 1));
   }, 10) ; //10ms = 0.01 second
 
   setInterval (function() {
