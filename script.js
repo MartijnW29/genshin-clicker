@@ -168,7 +168,7 @@ function changePriceColor(price, priceID) {
     var Kaeyas = checkForStorage(localStorage.Kaeyas, 0, "Kaeyas");
     var KaeyaConstellationcost = checkForStorage(localStorage.KaeyaConstellationcost, 10000, "KaeyaConstellationcost");
     var KaeyaConstellations = checkForStorage(localStorage.KaeyaConstellations, 0, "KaeyaConstellations");
-    var Bennettcost = checkForStorage(localStorage.Bennettcost, 10000, "Bennettcost");
+    var Bennettcost = checkForStorage(localStorage.Bennettcost, 12500, "Bennettcost");
     var Bennetts = checkForStorage(localStorage.Bennetts, 0, "Bennetts");
     var BennettConstellationcost = checkForStorage(localStorage.BennettConstellationcost, 100000, "BennettConstellationcost");
     var BennettConstellations = checkForStorage(localStorage.BennettConstellations, 0, "BennettConstellations");
@@ -197,7 +197,7 @@ function ResetProgress() {
   localStorage.setItem("Kaeyas", 0);
   localStorage.setItem("KaeyaConstellationcost", 10000);
   localStorage.setItem("KaeyaConstellations", 0);
-  localStorage.setItem("Bennettcost", 10000);
+  localStorage.setItem("Bennettcost", 12500);
   localStorage.setItem("Bennetts", 0);
   localStorage.setItem("BennettConstellationcost", 100000);
   localStorage.setItem("BennettConstellations", 0);
