@@ -266,7 +266,7 @@ function ResetProgress() {
       (Bennetts * 100 * (BennettConstellations + 1)) +
       (Razors * 300 * (RazorConstellations + 1)) +
       (Dionas * 1600 * (DionaConstellations + 1)) +
-      (Thomas * 5000 * (Thomaconstellations + 1));
+      (Thomas * 5000 * (ThomaConstellations + 1));
 
       document.getElementById("scorepersecond").innerHTML = scorepersecond;
       document.getElementById("score").innerHTML = score;
