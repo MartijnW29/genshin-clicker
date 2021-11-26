@@ -320,7 +320,7 @@ function ResetProgress() {
 
   setInterval (function() {
     Ambers = Ambers + Amberfabricators;
-  }, 1000) ; //1000ms = 1 second
+  }, 1500) ; //1000ms = 1 second
 
   setInterval (function() {
     updateSavedData();
