@@ -131,7 +131,7 @@ function changePriceColor(price, priceID) {
     }
   }
 
-  function buyThomaconstellation() {
+  function buyThomaConstellation() {
     if (score >= Thomaconstellationcost) {
       score -= Thomaconstellationcost;
       Thomaconstellations += 1;
