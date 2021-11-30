@@ -132,9 +132,9 @@ function changePriceColor(price, priceID) {
   }
 
   function buyThomaConstellation() {
-    if (score >= Thomaconstellationcost) {
-      score -= Thomaconstellationcost;
-      Thomaconstellations += 1;
+    if (score >= ThomaConstellationcost) {
+      score -= ThomaConstellationcost;
+      ThomaConstellations += 1;
       ThomaConstellationcost = Math.round(ThomaConstellationcost * 1.25) ;
     }
   }
